@@ -1,0 +1,32 @@
+# --- OS & editor cruft ---
+.DS_Store
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+**__pycache__**
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# --- Packaging/build ---
+build/
+dist/
+*.egg-info/
+
+# --- Virtual env & secrets ---
+.venv
+.env
+.env.*
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Test / type / lint caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Experiment artifacts (keep code, ignore runs) ---
+wandb/
+logs/
