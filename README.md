@@ -28,8 +28,9 @@ uv init \
 ### 2) Dev tooling (ruff, pytest, type checker) using dependency groups
 
 ```
-uv tool install ruff pytest
-uv tool install ty
+uv add --dev ruff;
+uv add --dev pytest;
+uv add --dev ty
 ```
 
 ### 3) Add core runtime deps (HF + scientific stack)
