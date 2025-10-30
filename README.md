@@ -15,14 +15,24 @@ GOOGLE_API_KEY=your-api-key
 # Initial repo setup
 
 ### 1) Create a package-style project, pin Python, init git, and scaffold files
-```
-uv init \
-  --name <PROJECT_NAME> \
-  --package \                # src/ layout + buildable package
-  --lib \                    # library-style project
-  --author-from git \        # infer author from your git config
-  --build-backend hatch      # use hatch's build backend
 
+> **Explanation (annotated — not for copy/paste)**
+>
+> ```bash
+> uv init \
+>   --name <PROJECT_NAME> \      # change to your project name
+>   --package \                  # use src/ layout and buildable package
+>   --lib \                      # library-style project
+>   --author-from git \          # infer author from your git config
+>   --build-backend hatch        # use Hatch as the build backend
+> ```
+>
+> Replace `<PROJECT_NAME>` with your desired package name.
+
+**Copy-paste command:**
+
+```bash
+uv init --name <PROJECT_NAME> --package --lib --author-from git --build-backend hatch
 ```
 
 ### 2) Dev tooling (ruff, pytest, type checker) using dependency groups
@@ -33,11 +43,19 @@ uv add --dev pytest;
 uv add --dev ty
 ```
 
-### 3) Add core runtime deps (HF + scientific stack)
+### 3) Add core runtime deps
+
+#### 3.1) HF + scientific stack
 ```
 uv add "numpy<2" pandas scikit-learn tqdm matplotlib einops \
        ipykernel transformers datasets
 ```
+
+#### 3.2) API-based LLM
+```bash
+uv add openai tiktoken
+```
+
 ### 4.0) PyTorch installation
 
 Add to `pyproject.toml` before installation
@@ -73,7 +91,7 @@ After saving pyproject.toml, sync with either:
 
 ```
 [tool.ruff]
-line-length = 80
+line-length = 88
 
 [tool.ruff.lint]
 preview = true
