@@ -53,7 +53,7 @@ uv add "numpy<2" pandas scikit-learn tqdm matplotlib einops \
 
 #### 3.2) API-based LLM
 ```bash
-uv add openai tiktoken
+uv add python-dotenv openai tiktoken 
 ```
 
 ### 4.0) PyTorch installation
